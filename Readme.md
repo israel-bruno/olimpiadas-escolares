@@ -1,18 +1,15 @@
 ## Olimpiadas escolares
 
+### Requisitos para rodar o projeto
+
+1 - Docker e docker compose -> https://docs.docker.com/desktop/install/windows-install/
+
 ### Como rodar o projeto:
 
     1 - Clonar repositório
         Comando: git clone https://github.com/israel-bruno/olimpiadas-escolares.git
 
-    2 - Abrir terminal na pasta do projeto
-
-
-    3 - Executar comando para instalar os pacotes do NodeJS
-        Comando: npm install
-
-    4 - Rodar projeto
-        Comando: npm run dev
+    2 - Rodar o comando docker-compose up -d
 
 ### Como testar os endpoints:
 

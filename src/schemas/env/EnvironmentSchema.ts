@@ -1,8 +1,11 @@
-import * as Joi from 'joi'
+import * as Joi from 'types-joi'
 
-export class EnvironmentSchema {
-  static DATABASE_USER = Joi.string().required()
-  static DATABASE_HOST = Joi.string().required()
-  static DATABASE_PORT = Joi.string().required()
-  static DATABASE_PASSWORD = Joi.string().required()
-}
+const EnvironmentSchema = Joi.object({
+  DATABASE_USER: Joi.string().required(),
+  DATABASE_HOST: Joi.string().required(),
+  DATABASE_PORT: Joi.number().required(),
+  DATABASE_PASSWORD: Joi.string().required(),
+  DATABASE_NAME: Joi.string().required(),
+})
+
+export default EnvironmentSchema

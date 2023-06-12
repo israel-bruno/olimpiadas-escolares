@@ -1,7 +1,8 @@
-version: '3.3'
+version: '3.7'
+
 services:
   db:
-    image: mysql:5.7
+    image: mysql
     restart: always
     environment:
       MYSQL_DATABASE: 'db'
@@ -10,9 +11,29 @@ services:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '3306:3306'
-    expose:
-      - '3306'
     volumes:
-      - my-db:/var/lib/mysql
+      - db:/var/lib/mysql
+
+  backend:
+    build: .
+    container_name: olimpiadas-escolares
+    environment:
+      DATABASE_NAME: 'db'
+      DATABASE_USER: 'user'
+      DATABASE_PASSWORD: 'password'
+      DATABASE_HOST: 'db'
+      DATABASE_PORT: '3306'
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src
+    links:
+      - db
+    depends_on:
+      - db
+    restart: always
+    command: npm run dev
+
 volumes:
-  my-db:
+  db:
+    driver: local

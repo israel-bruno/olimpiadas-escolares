@@ -10,8 +10,8 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
+    "dev": "dotenv nest start --watch",
+    "start:debug": "dotenv nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
@@ -28,13 +28,16 @@
     "@types/cors": "^2.8.13",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
+    "dotenv-cli": "^7.2.1",
     "joi": "^17.9.2",
+    "mysql": "^2.18.1",
     "nestjs-joi": "^1.9.0",
     "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.16"
+    "typeorm": "^0.3.16",
+    "types-joi": "^2.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
