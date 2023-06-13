@@ -5,16 +5,16 @@ export class UserEntity {
   @PrimaryColumn()
   id: string
 
-  @Column({ name: 'name', type: 'character varying' })
+  @Column({ name: 'name' })
   name: string
 
-  @Column({ name: 'email', type: 'character varying' })
+  @Column({ name: 'email' })
   email: string
 
-  @Column({ name: 'password', type: 'character varying' })
+  @Column({ name: 'password' })
   password: string
 
-  @Column({ name: 'validation_token', type: 'character varying' })
+  @Column({ name: 'validation_token' })
   validationToken: string
 
   @CreateDateColumn({ name: 'created_at', update: false })

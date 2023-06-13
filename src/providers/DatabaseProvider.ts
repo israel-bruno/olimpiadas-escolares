@@ -11,7 +11,7 @@ export const databaseProviders = [
         username: ENVIRONMENT.DATABASE_USER,
         password: ENVIRONMENT.DATABASE_PASSWORD,
         database: ENVIRONMENT.DATABASE_NAME,
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: ['dist/entities/*{.ts,.js}'],
         synchronize: true,
       })
       return dataSource.initialize()
